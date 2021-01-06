@@ -1,0 +1,7 @@
+{
+  "cars": [
+    { "id": 1, "name": "Toyota", "price": "20.000" },
+    { "id": 2, "name": "Renault", "price": "50.000" },
+    { "id": 3, "name": "Audi", "price": "120.000" }
+  ]
+}
