@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useFetchCars } from '../hooks/useFetchCars'
 
 export const CarsList = () => {
-  const [cars, setCars] = useState([]); 
-  useEffect(() => {
-    const fetchCars = async () => {
-      const response = await fetch('http://localhost:4000/cars');
-      setCars(await response.json())
-    }
-    fetchCars();
-  }, [])
+  const cars = useFetchCars();
   return (
     <div>
       {cars.map((car, index) => <li>[{++index}]{car.name} - {car.price}$</li>)}
