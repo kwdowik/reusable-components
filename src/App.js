@@ -1,5 +1,5 @@
-import { CarsList } from './components/CarsList';
-import { CarsTable } from './components/CarsTable';
+import CarsList from './components/CarsList';
+import CarsTable from './components/CarsTable';
 
 function App() {
   return (

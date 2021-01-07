@@ -1,8 +1,7 @@
 import React from 'react';
 import { useFetchCars } from '../hooks/useFetchCars'
 
-export const CarsTable = () => {
-  const cars = useFetchCars();
+const CarsTablePresentation = ({ cars }) => {
   return (
     <div>
       <table>
@@ -22,3 +21,12 @@ export const CarsTable = () => {
     </div>
   )
 }
+
+const CarsTableContainer = () => {
+  const cars = useFetchCars();
+  return (
+   <CarsTablePresentation cars={cars} />
+  )
+}
+
+export default CarsTableContainer;
