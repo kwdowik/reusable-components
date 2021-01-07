@@ -5,28 +5,33 @@ const CarsTablePresentation = ({ cars }) => {
   return (
     <div>
       <table>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Price</th>
-        </tr>
-        {cars.map((car, index) => (
-        <tr>
-          <td>{++index}</td>
-          <td>{car.name}</td>
-          <td>{car.price}$</td>
-        </tr>
-        ))}
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cars.map((car, index) => (
+            <tr key={index}>
+              <td>{++index}</td>
+              <td>{car.name}</td>
+              <td>{car.price}$</td>
+            </tr>
+            )
+          )}
+        </tbody>
       </table>
     </div>
   )
 }
 
-const CarsTableContainer = () => {
+const withFetchCarsHOC = (Cars) => () => {
   const cars = useFetchCars();
   return (
-   <CarsTablePresentation cars={cars} />
+   <Cars cars={cars} />
   )
 }
 
-export default CarsTableContainer;
+export default withFetchCarsHOC(CarsTablePresentation);
